@@ -1,6 +1,6 @@
 
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize('teste'/*data base*/, 'root'/*user*/, '*******'/*password*/, {
+const sequelize = new Sequelize('teste'/*data base*/, 'root'/*user*/, '****'/*password*/, {
     host: 'localhost'/*server*/,
     dialect: 'mysql'
 })
@@ -15,6 +15,7 @@ sequelize.authenticate().then(function(){
 
 //Model para Postagens
 
+
 const Postagem = sequelize.define('postagens', {
     titulo:{
         type: Sequelize.STRING
@@ -26,12 +27,14 @@ const Postagem = sequelize.define('postagens', {
 
 //Insaerção de dados para postagem -> EXEMPLO
 
+/*
 Postagem.create({
     titulo: "UM TITULO QUALQUER",
     conteudo: "bdcewifbceubfoebv feubquibeo efuoboqefe fobeoqbf"
 })
+ */
 
-//Model para Usuario
+ //Model para Usuario
 
 const Usuario = sequelize.define('usuarios', {
     Nome:{
@@ -48,3 +51,13 @@ const Usuario = sequelize.define('usuarios', {
     }
 })
 
+//Insaerção de dados para usuarios -> EXEMPLO
+
+/* 
+Usuario.create({
+    Nome: "João",
+    Sobrenome: "Neves",
+    Idade: 33,
+    email: "neves.joao@gmail.com"
+})
+*/
