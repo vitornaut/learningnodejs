@@ -1,6 +1,6 @@
 
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize('teste'/*data base*/, 'root'/*user*/, 'Temqtermaisde16!'/*password*/, {
+const sequelize = new Sequelize('teste'/*data base*/, 'root'/*user*/, '*******'/*password*/, {
     host: 'localhost'/*server*/,
     dialect: 'mysql'
 })
@@ -15,13 +15,19 @@ sequelize.authenticate().then(function(){
 
 //Model para Postagens
 
-const Postagem = sequelize.define('postagens', {
-    titulo:{
+const Usuario = sequelize.define('usuarios', {
+    Nome:{
         type: Sequelize.STRING
     },
-    conteudo: {
-        type: Sequelize.TEXT
-    }    
+    Sobrenome: {
+        type: Sequelize.STRING
+    },
+    Idade: {
+        type: Sequelize.INTEGER
+    },
+    email: {
+        type: Sequelize.STRING
+    }
 })
 
-Postagem.sync({force: true})
+Usuario.sync({force: true})
