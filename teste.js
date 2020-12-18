@@ -15,6 +15,24 @@ sequelize.authenticate().then(function(){
 
 //Model para Postagens
 
+const Postagem = sequelize.define('postagens', {
+    titulo:{
+        type: Sequelize.STRING
+    },
+    conteudo: {
+        type: Sequelize.TEXT
+    }
+})
+
+//Insaerção de dados para postagem -> EXEMPLO
+
+Postagem.create({
+    titulo: "UM TITULO QUALQUER",
+    conteudo: "bdcewifbceubfoebv feubquibeo efuoboqefe fobeoqbf"
+})
+
+//Model para Usuario
+
 const Usuario = sequelize.define('usuarios', {
     Nome:{
         type: Sequelize.STRING
@@ -30,4 +48,3 @@ const Usuario = sequelize.define('usuarios', {
     }
 })
 
-Usuario.sync({force: true})
