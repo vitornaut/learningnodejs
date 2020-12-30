@@ -1,4 +1,6 @@
 node_modules/
 *.json
 *.sql
-serverConfig.js
+
+# Data Base Settings
+dbConfig.js

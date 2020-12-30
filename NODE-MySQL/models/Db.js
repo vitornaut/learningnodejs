@@ -1,8 +1,8 @@
 //Abrindo conexão com o bando de dados
 
 const Sequelize = require('sequelize')
-const server = require('./serverConfig')
-const sequelize = new Sequelize (server.dataBase, server.user, server.password, {
+const dbConfig = require('./dbConfig')
+const sequelize = new Sequelize (dbConfig.dataBase , dbConfig.user, dbConfig.password, {
     host: 'localhost'/*server*/,
     dialect: 'mysql' 
 })
